@@ -12,7 +12,7 @@ namespace FlinkUpworkDevApp.Models
         private readonly string CacheId = string.Empty;
         private string UserObjectId = string.Empty;
 
-        private IDictionary<string, byte[]> _session = new Dictionary<string, byte[]>();
+        private static IDictionary<string, byte[]> _session = new Dictionary<string, byte[]>();
 
         public NaiveSessionCache(string userId)
         {
