@@ -38,8 +38,8 @@ namespace FlinkUpworkDevApp.AzureAD
         {
             var authContext = new Microsoft.IdentityModel.Clients.ActiveDirectory.AuthenticationContext(
                 AzureADSettings.Authority,
-                //new NaiveSessionCache(signedInUserID));
-                new ADALTokenCache(signedInUserID));
+                new NaiveSessionCache(signedInUserID));
+                //new ADALTokenCache(signedInUserID));
 
             return authContext;
         }
