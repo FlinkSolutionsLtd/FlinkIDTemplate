@@ -214,6 +214,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Security\AzureADHelper.cs" />
     <Compile Include="Security\AzureADSettings.cs" />
+    <Compile Include="Security\FakeCertificateValidator.cs" />
     <Compile Include="Security\OpenIdHelper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />

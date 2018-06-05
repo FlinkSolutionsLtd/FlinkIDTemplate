@@ -47,6 +47,8 @@ namespace FlinkUpworkDevApp.Security
                     RedirectUri = AzureADSettings.PostLogoutRedirectUri,
                     PostLogoutRedirectUri = AzureADSettings.PostLogoutRedirectUri,
 
+                    //remove it for production
+                    BackchannelCertificateValidator = new FakeCertificateValidator(),
                     Notifications = new OpenIdConnectAuthenticationNotifications()
                     {
                         AuthenticationFailed = context =>
