@@ -12,7 +12,7 @@ using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OpenIdConnect;
 using FlinkUpworkDevApp.Models;
-using FlinkUpworkDevApp.AzureAD;
+using FlinkUpworkDevApp.Security;
 
 namespace FlinkUpworkDevApp.Controllers
 {

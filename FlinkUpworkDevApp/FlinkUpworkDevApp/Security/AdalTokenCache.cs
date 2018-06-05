@@ -5,10 +5,13 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
+using FlinkUpworkDevApp.Models;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 
-namespace FlinkUpworkDevApp.Models
+namespace FlinkUpworkDevApp.Security
 {
+    //ditributed cache implementation could be found here: https://github.com/mrochon/RedisTokenCache
+
     public class ADALTokenCache : TokenCache
     {
         private ApplicationDbContext db = new ApplicationDbContext();

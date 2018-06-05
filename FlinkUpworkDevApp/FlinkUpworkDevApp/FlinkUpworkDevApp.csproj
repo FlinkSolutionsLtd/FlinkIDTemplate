@@ -212,18 +212,20 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="AzureAD\AzureADHelper.cs" />
-    <Compile Include="AzureAD\AzureADSettings.cs" />
+    <Compile Include="Security\AzureADHelper.cs" />
+    <Compile Include="Security\AzureADSettings.cs" />
+    <Compile Include="Security\OpenIdHelper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserProfileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AdalTokenCache.cs" />
+    <Compile Include="Security\AdalTokenCache.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
-    <Compile Include="Models\NaiveSessionCache.cs" />
+    <Compile Include="Security\NaiveSessionCache.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\UserTokenCache.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>

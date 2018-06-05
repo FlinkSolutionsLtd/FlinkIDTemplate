@@ -12,7 +12,7 @@ using Microsoft.Owin.Security.OpenIdConnect;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Owin;
 using FlinkUpworkDevApp.Models;
-using FlinkUpworkDevApp.AzureAD;
+using FlinkUpworkDevApp.Security;
 
 namespace FlinkUpworkDevApp
 {
@@ -29,29 +29,20 @@ namespace FlinkUpworkDevApp
             app.UseCookieAuthentication(new CookieAuthenticationOptions());
 
             //Authentication settings
-            app.UseOpenIdConnectAuthentication(
-                new OpenIdConnectAuthenticationOptions
-                {
-                    ClientId = AzureADSettings.ClientId,
-                    Authority = AzureADSettings.Authority,
-                    PostLogoutRedirectUri = AzureADSettings.PostLogoutRedirectUri,
+            if(!string.IsNullOrEmpty(AzureADSettings.TenantId))
+            {
+                OpenIdHelper.UseWithAzureAD(app);
+            }
+            else
+            {
+                OpenIdHelper.UseWithADFS(app);
+            }
+            
 
-                    Notifications = new OpenIdConnectAuthenticationNotifications()
-                    {
-                        // If there is a code in the OpenID Connect response, redeem it for an access token and refresh token, and store those away.
-                       AuthorizationCodeReceived = (context) =>
-                       {
-                           var code = context.Code;
-                           string signedInUserID = context.AuthenticationTicket.Identity.FindFirst(ClaimTypes.NameIdentifier).Value;
-                           AzureADHelper.AcquireTokenByAuthorizationCodeAsync(signedInUserID, code);
-
-                           return Task.FromResult(0);
-                       }
-                    }
-                });
+            
         }
 
- 
+
 
     }
 }

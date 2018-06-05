@@ -8,7 +8,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace FlinkUpworkDevApp.AzureAD
+namespace FlinkUpworkDevApp.Security
 {
     public class AzureADHelper
     {

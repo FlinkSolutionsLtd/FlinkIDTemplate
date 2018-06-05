@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace FlinkUpworkDevApp.Models
+namespace FlinkUpworkDevApp.Security
 {
     public class NaiveSessionCache : TokenCache
     {

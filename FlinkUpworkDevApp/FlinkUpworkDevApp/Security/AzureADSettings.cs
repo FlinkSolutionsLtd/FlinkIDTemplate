@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace FlinkUpworkDevApp.AzureAD
+namespace FlinkUpworkDevApp.Security
 {
 
     public class AzureADSettings
@@ -17,6 +17,7 @@ namespace FlinkUpworkDevApp.AzureAD
         public static readonly string AADInstance = EnsureTrailingSlash(ConfigurationManager.AppSettings["ida:AADInstance"]);
         public static readonly string TenantId = ConfigurationManager.AppSettings["ida:TenantId"];
         public static readonly string PostLogoutRedirectUri = ConfigurationManager.AppSettings["ida:PostLogoutRedirectUri"];
+        public static readonly string MetadataUri = ConfigurationManager.AppSettings["ida:ADFSMetadata"];
 
         public static readonly string Authority = AADInstance + TenantId;
 
